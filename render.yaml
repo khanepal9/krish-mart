@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: krish-mart
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: main
+    autoDeploy: true
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: PORT
+        value: 8080
