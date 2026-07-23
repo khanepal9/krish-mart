@@ -10,3 +10,22 @@ services:
     envVars:
       - key: PORT
         value: 8080
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DB_URL
+        fromDatabase:
+          name: krish-mart-db
+          property: connectionString
+      - key: DB_USER
+        fromDatabase:
+          name: krish-mart-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: krish-mart-db
+          property: password
+
+databases:
+  - name: krish-mart-db
+    plan: free
+    region: oregon
