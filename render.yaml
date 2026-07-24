@@ -12,10 +12,18 @@ services:
         value: 8080
       - key: SPRING_PROFILES_ACTIVE
         value: prod
-      - key: DB_URL
+      - key: DB_HOST
         fromDatabase:
           name: krish-mart-db
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: krish-mart-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: krish-mart-db
+          property: database
       - key: DB_USER
         fromDatabase:
           name: krish-mart-db
